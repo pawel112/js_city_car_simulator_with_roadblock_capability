@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script src="js/city.js"></script>
+<script src="js/user_input.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/file_saver.min.js"></script>
+<style>
+.pol {
+  width: 50%;
+  float: left;
+}
+</style>
+<div class="pol">
+	<img id="car" src="Images/car.svg" width="60px" height="17px">
+	<canvas id="myCanvas" width="800" height="800" style="border:1px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas>
+</div>
+<div class="pol">
+<textarea id="text" rows="55" cols="100"></textarea> 
+</div>	
+	
+<script>
+document.getElementById('car').style.visibility='hidden';
+	
+var user_datas = new user_input();
+user_datas.get_datas();
+
+var new_city = new city (user_datas.get_size_field(), 700, 100, 60, user_datas.get_probability(), user_datas.get_start_field1(), user_datas.get_start_field2(), user_datas.get_end_field1(), user_datas.get_end_field2());
+new_city.run_car();
+</script>
+
+</body>
+</html>	
